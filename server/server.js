@@ -23,14 +23,14 @@ app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 app.use("/api/users", userRoutes);
 
-app.use(express.static(path.join(__dirname, "/frontend/dist")));
+app.use(express.static(path.join(__dirname, "/client/dist")));
 
-app.get("*", (req, res) => {
-	res.sendFile(path.join(__dirname, "frontend", "dist", "index.html"));
+app.get("*", (req, res) => { 
+	res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
 });
 
 const PORT = process.env.PORT;
-server.listen(PORT, () => {
+server.listen(PORT, () => { 
 	connectToMongoDB();
 	console.log(`Server Running on port ${PORT}`);
 });

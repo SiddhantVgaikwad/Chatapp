@@ -11,7 +11,7 @@ const MessageInput = () => {
 		if (!message) return;
 		await sendMessage(message);
 		setMessage("");
-	};
+	}
 
 	return (
 		<form className='px-4 my-3' onSubmit={handleSubmit}>
@@ -28,7 +28,7 @@ const MessageInput = () => {
 				</button>
 			</div>
 		</form>
-	);
+	); 
 };
 export default MessageInput;
 
